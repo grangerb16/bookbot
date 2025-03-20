@@ -4,10 +4,13 @@ def get_book_text(path):
         contents = file.read()
     return contents
 
-def count_words(text):
-    return(len(text.split()))
+from stats import count_words
+
+from stats import count_chars
 
 def main():
-    print(f'{count_words(get_book_text("./books/frankenstein.txt"))} words found in the document')
+    text = get_book_text("./books/frankenstein.txt")
+    print(f'{count_words(text)} words found in the document')
+    print(count_chars(text))
 
 main()
